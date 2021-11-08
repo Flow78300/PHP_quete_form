@@ -1,109 +1,46 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Your first HTML form</title>
-		<style>
-			form {
-				/* Just to center the form on the page */
-				margin: 0 auto;
-				width: 400px;
-				/* To see the outline of the form */
-				padding: 1em;
-				border: 1px solid #ccc;
-				border-radius: 1em;
-			}
-
-			ul {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
-
-			form li + li {
-				margin-top: 1em;
-			}
-
-			label {
-				/* To make sure that all labels have the same size and are properly aligned */
-				display: inline-block;
-				width: 90px;
-				text-align: right;
-			}
-
-			input,
-			textarea {
-				/* To make sure that all text fields have the same font settings By default, textareas have a monospace font */
-				font: 1em sans-serif;
-				/* To give the same size to all text fields */
-				width: 300px;
-				box-sizing: border-box; /* To harmonize the look & feel of text field border */
-				border: 1px solid #999;
-			}
-
-			input:focus,
-			textarea:focus {
-				/* To give a little highlight on active elements */
-				border-color: #000;
-			}
-
-			textarea {
-				/* To properly align multiline text fields with their labels */
-				vertical-align: top;
-				/* To give enough room to type some text */
-				height: 5em;
-			}
-
-			.button {
-				/* To position the buttons to the same position of the text fields */
-				padding-left: 90px;
-				/* same size as the label elements */
-			}
-
-			button {
-				/* This extra margin represent roughly the same space as the space between the labels and their text fields */
-				margin-left: 0.5em;
-			}
-		</style>
-	</head>
-
-	<body>
-		<form action="thanks.php" method="post">
-			<ul>
-				<li>
-					<label for="firstname">First Name:</label>
-					<input type="text" id="firstname" name="user_firstname" />
-				</li>
-                <li>
-					<label for="lastame">Last Name:</label>
-					<input type="text" id="lastname" name="user_lastname" />
-				</li>
-				<li>
-					<label for="mail">E-mail:</label>
-					<input type="email" id="mail" name="user_mail" />
-				</li>
-                <li>
-					<label for="phone">Phone number:</label>
-					<input type="phone number" id="phone" name="user_phone_number" />
-				</li>
-                    <label for="subject">Select categorie:</label>
-                    <select id="subject" name="subject">
-                       <option value="select">About...</option> 
-                       <option value="informations">informations</option>
-                       <option value="call">Call back</option>
-                       <option value="rdv">Meet up</option>
-                       <option value="others">Others</option>
-                    </select>
-				<li>
-					<label for="msg">Message:</label>
-					<textarea id="msg" name="user_message"></textarea>
-				</li>
-				<li class="button">
-                  <button type="submit">Send your message!</button> 
-				</li>
-			</ul>
-		</form>
-        
-
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+</head>
+<body>
+<form action="thanks.php" method="post">
+    <div>
+        <label for="lastName">Lastname :</label>
+        <input type="text" id="lastName" name="lastName" required>
+    </div>
+    <div>
+        <label for="firstName">Firstname :</label>
+        <input type="text" id="firstName" name="firstName" required>
+    </div>
+    <div>
+        <label for="mail">E-mail :</label>
+        <input type="email" id="mail" name="user_mail" required>
+    </div>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone_number" id="phone" required>
+    </div>
+    <div>
+        <label for="subject">Sujet</label>
+        <select name="subject_message" id="subject" required>
+            <option value="theme_1">Subject 1</option>
+            <option value="theme_2">Subject 2</option>
+            <option value="theme_3">Subject 3</option>
+            <option value="theme_4">subject 4</option>
+        </select>
+    </div>
+    <div>
+        <label for="msg">Your message :</label>
+        <textarea id="msg" name="user_message" required></textarea>
+    </div>
+    <div class="bouton">
+        <button type="submit">Send message</button>
+    </div>
+</form>
+    
+</body>
 </html>
